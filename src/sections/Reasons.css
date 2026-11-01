@@ -1,0 +1,194 @@
+.reasons {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  max-width: 920px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(0.8rem, 3vw, 1.5rem);
+  perspective: 1200px;
+}
+
+.reason__btn {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  perspective: 1000px;
+  text-align: center;
+}
+
+.reason__inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+}
+
+.reason__face {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+}
+
+.reason__front::before {
+  content: '';
+  position: absolute;
+  inset: 8px;
+  border-radius: calc(var(--radius) - 6px);
+  border: 1px dashed currentColor;
+  opacity: 0.35;
+}
+
+.reason__num {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 12vw, 4.6rem);
+  font-weight: 500;
+  font-style: italic;
+  line-height: 1;
+}
+
+.reason__heart {
+  width: 26px;
+  height: 26px;
+  margin-top: 0.6rem;
+  transition: transform 0.4s var(--ease-out);
+}
+
+.reason__btn:hover .reason__heart {
+  transform: scale(1.25);
+}
+
+.reason__hint {
+  position: absolute;
+  bottom: 1rem;
+  font-size: 1.15rem;
+  opacity: 0.85;
+}
+
+.tone-rose {
+  background: linear-gradient(150deg, var(--rose), var(--rose-deep));
+  color: var(--cream);
+}
+
+.tone-blush {
+  background: linear-gradient(150deg, var(--blush), var(--blush-2));
+  color: var(--wine);
+}
+
+.tone-wine {
+  background: linear-gradient(150deg, #8d2a43, var(--wine));
+  color: var(--gold-soft);
+}
+
+.tone-cream {
+  background: var(--cream);
+  color: var(--rose);
+}
+
+.tone-gold {
+  background: linear-gradient(150deg, var(--gold-soft), var(--gold));
+  color: var(--wine);
+}
+
+.reason__back {
+  transform: rotateY(180deg);
+  background:
+    radial-gradient(circle at 50% 0%, rgba(246, 217, 211, 0.7), transparent 70%),
+    var(--cream);
+  color: var(--wine);
+  gap: 0.8rem;
+}
+
+.reason__back p {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(1.05rem, 3.6vw, 1.35rem);
+  line-height: 1.25;
+}
+
+.reason__back-num {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--rose);
+}
+
+.reason__back-heart {
+  width: 18px;
+  height: 18px;
+  color: var(--rose);
+}
+
+/* Photo back: photos on top, the note in its own strip below so nothing covers them */
+.reason__back.has-photos {
+  padding: 0;
+  gap: 0;
+  justify-content: stretch;
+  align-items: stretch;
+}
+
+.reason__photos {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-auto-rows: 1fr;
+  gap: 3px;
+  background: var(--wine);
+}
+
+.reason__photos .photo {
+  height: 100%;
+}
+
+.reason__photos .photo img {
+  object-position: center var(--focus, 30%);
+}
+
+.reason__photos.is-contain {
+  position: relative;
+  overflow: hidden;
+}
+
+.reason__photos.is-contain::before {
+  content: '';
+  position: absolute;
+  inset: -24px;
+  background: var(--bg) center / cover;
+  filter: blur(18px) brightness(0.85);
+}
+
+.reason__photos.is-contain .photo {
+  position: relative;
+  background: transparent;
+}
+
+.reason__photos.is-contain .photo img {
+  object-fit: contain;
+}
+
+.reason__note {
+  display: grid;
+  justify-items: center;
+  gap: 0.15rem;
+  padding: 0.55rem 0.7rem 0.65rem;
+}
+
+.reason__note p {
+  font-size: clamp(0.85rem, 2.6vw, 1.05rem);
+}
+
+@media (min-width: 768px) {
+  .reasons {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

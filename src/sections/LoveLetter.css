@@ -1,0 +1,99 @@
+#letter {
+  perspective: 1400px;
+}
+
+.letter {
+  --line: 2.1rem;
+  position: relative;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: clamp(2rem, 6vw, 3.25rem) clamp(1.5rem, 6vw, 3.5rem) clamp(2.5rem, 7vw, 3.5rem)
+    clamp(2.5rem, 9vw, 5rem);
+  border-radius: 6px;
+  background:
+    linear-gradient(90deg, transparent calc(clamp(1.6rem, 6vw, 3.5rem) - 1px), rgba(217, 71, 95, 0.35) 0, rgba(217, 71, 95, 0.35) calc(clamp(1.6rem, 6vw, 3.5rem) + 1px), transparent 0),
+    repeating-linear-gradient(to bottom, transparent 0, transparent calc(var(--line) - 1px), rgba(110, 31, 51, 0.12) calc(var(--line) - 1px), rgba(110, 31, 51, 0.12) var(--line)),
+    var(--cream);
+  background-origin: border-box, content-box, border-box;
+  background-position: 0 0, 0 0.35rem, 0 0;
+  box-shadow: var(--shadow-card);
+  transform-origin: 50% 0;
+  cursor: pointer;
+}
+
+.letter__tape {
+  top: -14px;
+  right: 12%;
+  transform: rotate(6deg);
+}
+
+.letter__date {
+  font-size: 1.25rem;
+  color: var(--ink-soft);
+  text-align: right;
+  line-height: var(--line);
+}
+
+.letter__body {
+  display: grid;
+  font-size: clamp(1.45rem, 4.4vw, 1.75rem);
+  line-height: var(--line);
+  color: var(--ink);
+  white-space: pre-line;
+}
+
+.letter__sizer,
+.letter__typed {
+  grid-area: 1 / 1;
+}
+
+.letter__sizer {
+  visibility: hidden;
+}
+
+.letter__caret {
+  display: inline-block;
+  width: 2px;
+  height: 1.1em;
+  margin-left: 2px;
+  vertical-align: -0.15em;
+  background: var(--rose);
+  animation: caret 0.9s steps(1) infinite;
+}
+
+@keyframes caret {
+  50% {
+    opacity: 0;
+  }
+}
+
+.letter__seal {
+  position: absolute;
+  right: clamp(1rem, 5vw, 2.5rem);
+  bottom: clamp(-1.6rem, -3vw, -1rem);
+  width: 64px;
+  height: 64px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #c84b62, var(--wine) 75%);
+  box-shadow: 0 0 0 4px rgba(110, 31, 51, 0.2), 0 10px 20px rgba(110, 31, 51, 0.35);
+  color: var(--gold-soft);
+}
+
+.letter__seal svg {
+  width: 44%;
+}
+
+.letter__skip {
+  position: absolute;
+  left: 50%;
+  bottom: 0.8rem;
+  transform: translateX(-50%);
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  opacity: 0.7;
+  white-space: nowrap;
+}

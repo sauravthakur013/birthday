@@ -1,0 +1,29 @@
+:root {
+  --paper: #fbf4ec;
+  --paper-2: #f5e9dd;
+  --cream: #fffaf4;
+  --blush: #f6d9d3;
+  --blush-2: #efc4bb;
+  --rose: #d9475f;
+  --rose-deep: #b8334b;
+  --wine: #6e1f33;
+  --ink: #2e2326;
+  --ink-soft: #6f5a5f;
+  --gold: #c9a45c;
+  --gold-soft: #e6cf9c;
+
+  --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --font-hand: 'Caveat', 'Segoe Script', cursive;
+  --font-body: 'DM Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --radius-sm: 10px;
+  --radius: 18px;
+  --radius-lg: 28px;
+
+  --shadow-soft: 0 10px 30px -12px rgba(110, 31, 51, 0.25);
+  --shadow-card: 0 24px 50px -20px rgba(110, 31, 51, 0.35), 0 4px 12px -4px rgba(46, 35, 38, 0.12);
+  --shadow-lift: 0 34px 70px -24px rgba(110, 31, 51, 0.45);
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --section-x: clamp(1.25rem, 5vw, 3rem);
+}

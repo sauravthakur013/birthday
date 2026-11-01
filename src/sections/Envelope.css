@@ -1,0 +1,184 @@
+.intro {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(2rem, 6vh, 3.5rem);
+  padding: 1.5rem;
+  background:
+    radial-gradient(circle at 50% 40%, rgba(255, 250, 244, 0.95), rgba(251, 244, 236, 0) 60%),
+    radial-gradient(circle at 15% 85%, rgba(246, 217, 211, 0.9), transparent 50%),
+    radial-gradient(circle at 85% 15%, rgba(230, 207, 156, 0.35), transparent 45%),
+    var(--paper);
+  text-align: center;
+}
+
+.intro__hint {
+  font-size: clamp(1.7rem, 6vw, 2.4rem);
+  color: var(--wine);
+  line-height: 1.2;
+}
+
+.intro__tap {
+  font-size: 0.78rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  font-weight: 500;
+}
+
+.env-wrap {
+  --w: min(84vw, 420px);
+  width: var(--w);
+  height: calc(var(--w) / 1.5);
+  perspective: 1200px;
+  cursor: pointer;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.env-wrap:focus-visible .env__back {
+  outline: 2px solid var(--rose);
+  outline-offset: 6px;
+}
+
+.env {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  perspective: 1000px;
+  filter: drop-shadow(0 30px 40px rgba(110, 31, 51, 0.25));
+}
+
+.env__back {
+  position: absolute;
+  inset: 0;
+  border-radius: 10px;
+  background: linear-gradient(160deg, #e7b9ae, #dba497);
+}
+
+.env__letter {
+  position: absolute;
+  left: 7%;
+  right: 7%;
+  top: 6%;
+  height: 88%;
+  z-index: 2;
+  border-radius: 8px;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(246, 217, 211, 0.6), transparent 70%),
+    var(--cream);
+  box-shadow: 0 -6px 20px rgba(110, 31, 51, 0.12);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 8%;
+}
+
+.env__letter-for {
+  font-size: clamp(1.2rem, 4.5vw, 1.6rem);
+  color: var(--rose);
+  line-height: 1;
+}
+
+.env__letter-name {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(1.6rem, 7vw, 2.4rem);
+  color: var(--wine);
+  line-height: 1.15;
+}
+
+.env__letter-heart {
+  width: 22px;
+  height: 22px;
+  margin-top: 0.4rem;
+  color: var(--rose);
+}
+
+.env__pocket {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  border-radius: 10px;
+  clip-path: polygon(0 0, 50% 54%, 100% 0, 100% 100%, 0 100%);
+  background:
+    linear-gradient(to top right, rgba(255, 255, 255, 0.08) 49.5%, transparent 50%),
+    linear-gradient(200deg, #f3d3ca, #ecc1b6);
+}
+
+.env__to {
+  position: absolute;
+  left: 8%;
+  bottom: 10%;
+  font-size: clamp(1.2rem, 4.5vw, 1.55rem);
+  color: var(--wine);
+}
+
+.env__stamp {
+  position: absolute;
+  right: 6%;
+  bottom: 9%;
+  width: 18%;
+  aspect-ratio: 4 / 5;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 2px;
+  background: var(--cream);
+  border: 2px dashed rgba(201, 164, 92, 0.8);
+  outline: 3px solid var(--cream);
+  color: var(--rose);
+  transform: rotate(4deg);
+}
+
+.env__stamp svg {
+  width: 45%;
+}
+
+.env__stamp small {
+  font-size: clamp(0.42rem, 1.4vw, 0.55rem);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--wine);
+  font-weight: 700;
+}
+
+.env__flap {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 60%;
+  transform-origin: 50% 0;
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  background: linear-gradient(180deg, #e9bfb4, #f0cbc1 80%);
+  border-radius: 10px 10px 0 0;
+}
+
+.env__seal {
+  position: absolute;
+  z-index: 5;
+  left: 50%;
+  top: 60%;
+  width: clamp(52px, 15vw, 66px);
+  aspect-ratio: 1;
+  margin: calc(clamp(52px, 15vw, 66px) / -2) 0 0 calc(clamp(52px, 15vw, 66px) / -2);
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #c84b62, var(--wine) 75%);
+  box-shadow:
+    0 0 0 4px rgba(110, 31, 51, 0.25),
+    0 8px 18px rgba(110, 31, 51, 0.45),
+    inset 0 -4px 8px rgba(0, 0, 0, 0.25);
+  color: var(--gold-soft);
+}
+
+.env__seal svg {
+  width: 44%;
+}

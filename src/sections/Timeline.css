@@ -1,0 +1,133 @@
+.timeline {
+  --line-x: 18px;
+  position: relative;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.timeline__line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--line-x);
+  width: 2px;
+  margin-left: -1px;
+  background: repeating-linear-gradient(to bottom, rgba(184, 51, 75, 0.25) 0 6px, transparent 6px 12px);
+}
+
+.timeline__progress {
+  position: absolute;
+  inset: 0;
+  transform-origin: top;
+  background: linear-gradient(var(--gold), var(--rose));
+  border-radius: 2px;
+}
+
+.timeline__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: clamp(3rem, 9vw, 5rem);
+}
+
+.tl-item {
+  position: relative;
+  padding-left: calc(var(--line-x) + 2rem);
+  perspective: 1000px;
+}
+
+.tl-item__dot {
+  position: absolute;
+  left: var(--line-x);
+  top: 0.3rem;
+  width: 34px;
+  height: 34px;
+  margin-left: -17px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--cream);
+  color: var(--rose);
+  box-shadow: 0 0 0 5px var(--paper), var(--shadow-soft);
+  z-index: 1;
+}
+
+.tl-item__dot svg {
+  width: 16px;
+  height: 16px;
+}
+
+.tl-item__body {
+  max-width: 380px;
+}
+
+.tl-item__date {
+  display: inline-block;
+  margin-bottom: 0.9rem;
+  padding: 0.3rem 0.85rem;
+  border-radius: 999px;
+  background: var(--blush);
+  color: var(--wine);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.tl-item__card {
+  margin: 0;
+  transition: box-shadow 0.4s;
+}
+
+.tl-item__card.is-tilt-l {
+  transform: rotate(-1.5deg);
+}
+
+.tl-item__card.is-tilt-r {
+  transform: rotate(1.5deg);
+}
+
+.tl-item__card:hover {
+  box-shadow: var(--shadow-lift);
+}
+
+@media (min-width: 768px) {
+  .timeline {
+    --line-x: 50%;
+  }
+
+  .tl-item {
+    width: 50%;
+    padding-left: 0;
+  }
+
+  .tl-item--left {
+    padding-right: 3.5rem;
+    display: flex;
+    justify-content: flex-end;
+    text-align: right;
+  }
+
+  .tl-item--right {
+    margin-left: 50%;
+    padding-left: 3.5rem;
+  }
+
+  .tl-item--left .tl-item__dot {
+    left: 100%;
+  }
+
+  .tl-item--right .tl-item__dot {
+    left: 0;
+  }
+
+  .tl-item__body {
+    width: 100%;
+    max-width: 360px;
+  }
+
+  .tl-item:not(:first-child) {
+    margin-top: -4rem;
+  }
+}

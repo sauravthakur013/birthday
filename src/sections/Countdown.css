@@ -1,0 +1,127 @@
+.countdown__card {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: clamp(1.25rem, 4vw, 2.25rem);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(150deg, var(--wine), #8d2a43 60%, var(--rose-deep));
+  box-shadow: var(--shadow-lift);
+  transform-origin: 50% 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.countdown__card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 15% 0%, rgba(255, 255, 255, 0.18), transparent 45%),
+    radial-gradient(circle at 100% 100%, rgba(201, 164, 92, 0.3), transparent 50%);
+  pointer-events: none;
+}
+
+.countdown__tiles {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(0.5rem, 2vw, 1rem);
+}
+
+.tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tile__num {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1.1;
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius);
+  background: rgba(255, 250, 244, 0.1);
+  border: 1px solid rgba(255, 250, 244, 0.18);
+  perspective: 400px;
+  overflow: hidden;
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 8vw, 3.6rem);
+  font-weight: 500;
+  color: var(--cream);
+  font-variant-numeric: tabular-nums;
+}
+
+.tile__num::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.18);
+}
+
+.tile__num span {
+  display: block;
+}
+
+.tile__label {
+  font-size: clamp(0.62rem, 2vw, 0.78rem);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold-soft);
+  font-weight: 500;
+}
+
+.countdown__today {
+  position: relative;
+  text-align: center;
+  padding: 1.5rem 0;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(2.2rem, 8vw, 3.6rem);
+  color: var(--cream);
+}
+
+.countdown__today-heart {
+  width: 0.7em;
+  height: 0.7em;
+  color: var(--blush);
+  vertical-align: middle;
+}
+
+.together {
+  position: relative;
+  max-width: 420px;
+  margin: clamp(2.5rem, 7vw, 3.5rem) auto 0;
+  text-align: center;
+}
+
+.together__heart {
+  width: 26px;
+  height: 26px;
+  color: var(--rose);
+  margin: 0 auto 0.4rem;
+  display: block;
+}
+
+.together__num {
+  font-family: var(--font-display);
+  font-size: clamp(3.4rem, 14vw, 5.5rem);
+  font-weight: 500;
+  color: var(--wine);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.together__label {
+  margin-top: 0.4rem;
+  color: var(--ink-soft);
+  font-size: 1.05rem;
+}
+
+.together__label .hand {
+  font-size: 1.6rem;
+  color: var(--rose);
+}
