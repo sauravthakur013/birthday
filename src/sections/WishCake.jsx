@@ -158,7 +158,7 @@ export default function WishCake() {
               <div className="polaroid">
                 <Photo id={content.finaleImage} alt={content.name} />
                 <p className="polaroid__caption">
-                  happy birthday <Heart className="finale__caption-heart" />
+                  happy birthday from lachu <Heart className="finale__caption-heart" />
                 </p>
               </div>
             </TiltCard>

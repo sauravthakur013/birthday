@@ -9,6 +9,7 @@ import img1 from '../assets/photos/1.jpg'
 import img2 from '../assets/photos/2.jpg'
 import img3 from '../assets/photos/3.jpg'
 import img4 from '../assets/photos/4.jpg'
+import img7 from '../assets/photos/7.jpg'
 import img8 from '../assets/photos/8.jpg'
 import img9 from '../assets/photos/9.jpg'
 import img10 from '../assets/photos/10.jpg'
@@ -32,7 +33,7 @@ export const images = {
   4: img4,
   5: null,
   6: null,
-  7: null,
+  7: img7,
   8: img8,
   9: img9,
   10: img10,
